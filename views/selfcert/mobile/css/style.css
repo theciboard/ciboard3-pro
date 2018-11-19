@@ -1,0 +1,22 @@
+/**
+	mypage skin css
+*/
+
+.mypage .mypagemain li {display: block;margin: 0px; clear: both; margin-bottom: 15px;}
+.mypage .mypagemain li>span {float: left;width: 25%;text-align: right;padding-right: 20px;margin-top: 5px;color: #000;font-weight: bold;}
+.mypage .mypagemain li {min-height:25px;}
+
+.mypage .scrapbtn {font-size:10px;}
+
+.mypage .askpassword li {display: block;margin: 0px; clear: both; margin-bottom: 15px;}
+.mypage .askpassword li>span {float: left;width: 25%;text-align: right;padding-right: 20px;margin-top: 5px;color: #000;font-weight: bold;}
+
+.mypage .member_modify li {display: block;margin: 0px; clear: both; margin-bottom: 15px;}
+.mypage .member_modify li>span {margin-top: 5px;color: #000;font-weight: bold;}
+.mypage .member_modify textarea {width:90%; }
+
+.mypage .table-top {overflow: hidden;padding-bottom: 10px;}
+.mypage .table-top input{margin-bottom: 0;margin-top: 0;}
+.mypage .table-top li{float: left;text-align: center;padding-right: 5px;}
+
+.mypage .nav {margin-bottom:20px;}

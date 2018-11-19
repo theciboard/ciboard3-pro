@@ -1,0 +1,7 @@
+/**
+	login skin css
+*/
+
+.access{width: 400px; margin: 0 auto;}
+.loginform li {display: block;margin: 0px; clear: both; margin: 15px;}
+.loginform li>span {float: left;width: 25%;text-align: right;padding-right: 20px;margin-top: 5px;color: #000;font-weight: bold;}

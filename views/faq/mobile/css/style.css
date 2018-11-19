@@ -1,0 +1,7 @@
+/**
+	faq skin css
+*/
+
+.search_box {background-color: #d9edf7;border: 1px solid #ddd;padding: 15px !important;border-radius: 3px;overflow: hidden;}
+.table-heading {cursor:pointer;}
+.answer {display:none;}

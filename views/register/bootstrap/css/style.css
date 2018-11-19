@@ -1,0 +1,8 @@
+/**
+	member skin css
+*/
+
+.access .panel-footer{overflow:hidden;}
+.search form{padding:20px;}
+.search textarea {padding: 15px;background: #f7f7f7;font-size: 12px;}
+.final .btn_final{margin-top:20px; text-align:center;}

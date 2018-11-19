@@ -1,0 +1,6 @@
+## htaccess for data uploads
+
+<FilesMatch "\.(htaccess|htpasswd|[Pp][Hh][Pp]|[Pp]?[Hh][Tt][Mm][Ll]?|[Ii][Nn][Cc]|[Cc][Gg][Ii]|[Pp][Ll])">
+Order allow,deny
+Deny from all
+</FilesMatch>

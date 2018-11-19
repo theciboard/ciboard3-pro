@@ -1,0 +1,120 @@
+<!--
+    /* ============================================================================== */
+    /* =   PAGE : 플러그인 설치 체크 PAGE                                           = */
+    /* = -------------------------------------------------------------------------- = */
+    /* =   Copyright (c)  2006   KCP Inc.   All Rights Reserverd.                   = */
+    /* ============================================================================== */
+//-->
+<html>
+<head>
+<title>*** KCP Online Payment System [PHP Version] ***</title>
+<link href="css/sample.css" rel="stylesheet" type="text/css">
+<script language='javascript' src='http://pay.kcp.co.kr/plugin/payplus.js'></script>
+<script language='javascript'>
+// 플러그인 설치(확인)
+StartSmartUpdate();
+
+function  jsf__chk_plugin()
+{
+    if ( document.Payplus.object != null )
+    {
+        window.location = "order.html";
+    }
+}
+
+setTimeout( 'jsf__chk_plugin()', '1000' );
+</script>
+</head>
+
+<body onload='jsf__chk_plugin();'>
+<center>
+<table border='0' width='600'>
+    <tr>
+        <td height='50'>&nbsp;</td>
+    </tr>
+    <tr>
+        <td align="center">
+            <hr noshade size="2">
+            <b style="color:blue">결제에 필요한 프로그램을 확인(설치) 중입니다.</b>
+            <hr noshade size="2">
+        </td>
+    </tr>
+    <tr>
+        <td height='30'>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            <table width="600" border="0" align="center" cellpadding="1" cellspacing="0" bgcolor="#DFDFDF">
+                <tr>
+                    <td>
+                        <table width="600" border="0" align="center" cellpadding="5" cellspacing="0" class='text3' bgcolor='#f6fff6'>
+                            <tr>
+                                <td class='text8' colspan='2' style='padding:10 0 10 20;'>
+                                    고객님의 안전한 결제를 위해 결제 정보를 암호화하는 프로그램을 확인(설치)하는 중입니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign='top'>1</td>
+                                <td>
+                                    Windows XP ServicePack2 를 설치하신 고객님은 페이지 상단의 알림표시줄이 나타났을 경우
+                                    알림표시줄에서 마우스 오른쪽 버튼을 눌러 『ActiveX 컨트롤 설치』를 선택하여 주십시오.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign='top'>2</td>
+                                <td>
+                                    보안경고 창이 나타나면 『설치』 또는 『예』 버튼을 눌러 설치를 진행하여 주십시오.
+                                    통신 환경에 따라 2-3초에서 수분이 걸릴수도 있습니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign='top'>3</td>
+                                <td>
+                                    암호화를 위한 프로그램 설치가 완료되면 자동으로 압축이 해제된 후 설치가 됩니다.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="600" border="0" align="center" cellpadding="1" cellspacing="0" bgcolor="#DFDFDF">
+                <tr>
+                    <td>
+                        <table width="600" border="0" align="center" cellpadding="5" cellspacing="0" class='text3' bgcolor='#f6fff6'>
+                            <tr>
+                                <td class='text8' colspan='2' style='padding:10 0 10 20;'>
+                                    프로그램이 자동으로 설치가 되지 않는 경우
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign='top'>1</td>
+                                <td>
+                                    <B><a href='http://pay.kcp.co.kr/plugin/file/PayplusWizard.zip'>이곳</a></B>을 눌러 설치 파일을 다운로드하여 주십시오.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign='top'>2</td>
+                                <td>
+                                    다운받은 프로그램을 실행하시면 설치가 진행됩니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign='top'>3</td>
+                                <td>
+                                    설치가 완료된 후 키보드의 『F5』버튼을 눌러 새로고침을 하면 다음 결제 페이지로 이동합니다.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</center>
+</body>
+</html>

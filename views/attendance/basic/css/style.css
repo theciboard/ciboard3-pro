@@ -1,0 +1,16 @@
+/**
+	attendance skin css
+*/
+
+.wrapmemo {}
+.wrapmemo input {width:400px;}
+
+.attendance_box {background-color: #d9edf7;border: 1px solid #ddd;padding: 15px !important;border-radius: 3px;overflow: hidden;}
+.date-navigation {text-align: center;padding-bottom: 15px; }
+.date-navigation li{font-size: 12px;line-height: 20px;display: inline-block;background-image: -moz-linear-gradient(center top , #fff, #E0E0E0);border: 1px solid #ddd;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;padding: 0 4px;margin: 3px;cursor:pointer;}
+.date-navigation li.active {border: 1px solid #ddd;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;padding: 0 7px;margin: 0 2px;display: inline-block;line-height: 20px;background: #428bca;color: #fff;font-weight: bold;}
+.date-navigation li:hover{background: #428bca;color: #fff;}
+
+.selected-date {text-align:center;padding-bottom:10px;font-size:14px;}
+.alert-point-policy {display:none; }
+.view_policy {margin-top:7px;}

@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}
+fieldset,img {border:0 none}
+dl,ul,ol,menu,li {list-style:none}
+blockquote, q {quotes: none}
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
+input,select,textarea,button {vertical-align:middle}
+button {border:0 none;background-color:transparent;cursor:pointer}
+body {background:#e6e6e6; }
+body,th,td,input,select,textarea,button {line-height:1.5;font-family: 나눔고딕,NanumGothic,돋움,Dotum,Arial,Helvetica,sans-serif;font-size: 12px; color:#333} 
+a {color:#5b5b5b;text-decoration: none;}
+a:active, a:hover {color:#6491ba; text-decoration:none}
+
+h1{position: absolute;  color: #fff;margin-left: 20px; margin-top: 10px;font-size:30px;}
+h2{color: #4a78a1; font-size: 18px; padding-bottom: 20px;}
+.title{font-size: 14px;  padding-left:5px;}
+.stitle{font-size: 13px;  padding-left:5px;}
+.bold {font-weight:bold;}
+
+.color_red{
+	color: #ff5e5e;
+}
+.color_blue{
+	color: #6491ba;
+}
+.color_grey{
+	color: #c0c0c0;
+}
+.glyphicon-star{color: #ff5e5e; font-size: 12px;
+	
+}
+.bg-info{
+	padding: 10px 20px;
+}
+
+.wrapper{width: 800px; margin: 120px auto 0;}
+
+.header{background:#314f6b; height: 54px; line-height:54px;position: relative;}
+
+.header .version{position:absolute; color: #fff; font-size: 14px; right: 0; margin-right: 20px;
+}
+.header .v_no{color: #ff9999;}
+
+.main{clear: both;}
+.main .menu{float: left;width: 220px;}
+.main .menu li{float: left; width: 220px;
+	border-bottom: 1px solid #fff;background-color: #6390b9; color: #fff;   background-image: url(../images/icon_off.png);  padding: 10px;
+background-repeat: no-repeat;
+background-position: 10px 15px;
+ text-indent: 20px;}
+
+.main .menu .active{color: #fff;background-color: #4977a0; 
+background-image: url(../images/icon_on.png);
+background-repeat: no-repeat;
+background-position: 10px 15px;
+
+}
+
+.main .contents{float: right;background: #f5f5f5; width: 580px; padding: 20px 40px;
+}
+
+.main .contents ul{
+	padding: 10px 0 10px 30px;
+}
+.main .contents ul li{
+	padding: 2px 0;
+	list-style: disc;
+}
+.main .contents ul li a{color: #6491ba;}
+.main .contents .language li{
+	list-style: none !important;
+}
+.main .contents ul li:hover{
+	color:#6491ba; }
+.main .contents ul li.active{
+	color:#6491ba; margin-left: -15px;
+}
+.main .contents .cont{
+	border-bottom: 1px dotted #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.footer{background:#444444; height:40px; line-height: 40px; float: right; width: 580px; padding:10px 20px}
+

@@ -1,0 +1,12 @@
+/**
+	note skin css
+*/
+
+.note_menu li {width:32%;}
+.note_menu a {font-size:14px;padding:5px 0px;width:100%;}
+.note-view small{float:right;}
+.note-contents{padding:20px;}
+.note-view-title{border-bottom: 1px solid #ccc;padding-bottom: 5px;padding-left: 10px;padding-right: 10px;background: #D0E3F1;height: 30px;line-height: 30px;}
+form li>span {float: left;width: 25%;text-align: right;padding-right: 20px;margin-top: 5px;color: #000;font-weight: bold;}
+form .input {margin-bottom:15px; width:90%;}
+textarea.input {width:90%;height:200px;}

@@ -1,0 +1,9 @@
+/**
+	search skin css
+*/
+
+.search_box {background-color: #d9edf7;border: 1px solid #ddd;padding: 15px 0 15px !important;border-radius: 3px;overflow: hidden;}
+.search_box .group{ display:inline-block; padding: 0 10px; }
+.search form{padding:20px;}
+.search textarea {padding: 15px;background: #f7f7f7;font-size: 12px;}
+

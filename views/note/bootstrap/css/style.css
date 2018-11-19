@@ -1,0 +1,7 @@
+/**
+	note skin css
+*/
+
+.note-view small{float:right;}
+.note-contents{padding:20px;}
+.note-view-title{border-bottom: 1px solid #ccc;padding-bottom: 5px;padding-left: 10px;padding-right: 10px;background: #D0E3F1;height: 30px;line-height: 30px;}

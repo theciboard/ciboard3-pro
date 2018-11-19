@@ -1,0 +1,10 @@
+/**
+	notification skin css
+*/
+
+.notification{padding:10px 20px;}
+.notification .table-top {overflow: hidden;padding-bottom: 10px;}
+.notification .table-top input{margin-bottom: 0;margin-top: 0;}
+.notification .table-top li{float: left;text-align: center;padding-right: 5px;}
+.notification .read {color:#2670b7;}
+.notification .unread {color:#ce4741;}

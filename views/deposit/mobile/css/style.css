@@ -1,0 +1,36 @@
+
+/* credit */
+.credit{
+	padding: 20px;
+}
+.credit .textblue{
+	color:#348fe2;
+}
+.credit .credit_tit{font-size: 16px; font-weight:bold;
+	
+}
+.credit_form{
+	margin: 20px 0;
+}
+.credit_info{
+	color: #626262; 
+}
+.modal-body .credit{
+	padding: 0 !important;
+	
+}
+.credit .credit_method{
+	border: 5px solid #e9e9e9; padding: 20px 10px; text-align:center; margin-bottom: 20px;
+}
+.credit .credit_button{
+	margin-bottom: 20px; text-align:center;
+}
+.small{
+	padding-top: 9px;
+	display: inline-block;
+	padding-left: 15px;
+}
+.amount{
+	padding-top: 7px;
+	display: inline-block;
+}

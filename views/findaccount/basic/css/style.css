@@ -1,0 +1,18 @@
+/**
+	fincaccount skin css
+*/
+
+.findarea{width: 700px;margin: 0 auto;}
+.findarea .text{padding-bottom: 10px;}
+.findarea .group{margin-bottom: 10px;}
+
+.final{width: 500px; margin: 0 auto;}
+.final .btn_final {text-align: center;}
+
+.findaccount {padding:30px;  border-top: 1px solid #ddd;}
+.verifyemail  {padding:30px;  border-top: 1px solid #ddd;}
+
+.change_pw {padding:30px;  border-top: 1px solid #ddd;}
+
+.change_password li {display: block;margin: 0px; clear: both; margin-bottom: 15px;}
+.change_password li>span {float: left;width: 25%;text-align: right;padding-right: 20px;margin-top: 5px;color: #000;font-weight: bold;}

@@ -1,0 +1,17 @@
+/*base font*/
+body{font-size:12px; font-family:"Arial",굴림; color:#666666; line-height:140%; background-repeat: repeat-x;}
+td{font-size:12px; font-family:"Arial",굴림; color:#666666; line-height:140%;}
+select{font-size:11px; font-family:"verdana"; color:#2C2C2C;}
+input{font-size:11px; font-family:"verdana"; color:#2C2C2C;}
+
+/*base link*/
+a {FONT-FAMILY: "Arial",굴림; FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none}
+a:hover {FONT-FAMILY: "Arial",굴림; FONT-SIZE: 12px; COLOR: #4D82A2; TEXT-DECORATION:none}
+
+/* main */
+.txt_main      { color:#647CBE; font-weight:bold; font-family: 굴림, verdana; }
+.txt_sub_main  { color:#CB689E; }
+.txt_sub { color:#5EACB8; }
+.notice  { color:#2092B6; }
+
+.box { background-color:silver; font-size:9pt;border:#818181 1px solid;}
