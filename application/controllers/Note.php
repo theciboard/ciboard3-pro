@@ -415,7 +415,7 @@ class Note extends CB_Controller
 			$view['view']['event']['formruntrue'] = Events::trigger('formruntrue', $eventname);
 
 			$file_error = '';
-			$uploadfiledata = '';
+			$uploadfiledata = array();
 
 			if ($this->cbconfig->item('use_note_file')) {
 				$this->load->library('upload');
