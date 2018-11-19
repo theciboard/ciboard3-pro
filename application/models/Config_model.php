@@ -70,7 +70,7 @@ class Config_model extends CB_Model
 		}
 
 		$old_value = $this->item($column);
-		if (empty($value)) {
+		if (is_null($value)) {
 			$value = '';
 		}
 		if ($value === $old_value) {
