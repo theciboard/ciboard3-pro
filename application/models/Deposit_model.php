@@ -48,13 +48,6 @@ class Deposit_model extends CB_Model
 	}
 
 
-	public function get_list($limit = '', $offset = '', $where = '', $like = '', $findex = '', $forder = '', $sfield = '', $skeyword = '', $sop = 'OR')
-	{
-		$result = $this->_get_list_common($select = '', $join = '', $limit, $offset, $where, $like, $findex, $forder, $sfield, $skeyword, $sop);
-		return $result;
-	}
-
-
 	public function get_deposit_sum($mem_id = 0)
 	{
 		$mem_id = (int) $mem_id;

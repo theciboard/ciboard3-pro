@@ -69,13 +69,6 @@ class Cmall_order_model extends CB_Model
 	}
 
 
-	public function get_list($limit = '', $offset = '', $where = '', $like = '', $findex = '', $forder = '', $sfield = '', $skeyword = '', $sop = 'OR')
-	{
-		$result = $this->_get_list_common($select = '', $join = '', $limit, $offset, $where, $like, $findex, $forder, $sfield, $skeyword, $sop);
-		return $result;
-	}
-
-
 	public function get_graph_count($type = 'd', $start_date = '', $end_date = '', $where = '')
 	{
 		if (empty($start_date) OR empty($end_date)) {

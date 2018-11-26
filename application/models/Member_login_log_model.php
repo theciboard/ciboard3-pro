@@ -37,13 +37,6 @@ class Member_login_log_model extends CB_Model
 	}
 
 
-	public function get_list($limit = '', $offset = '', $where = '', $like = '', $findex = '', $forder = '', $sfield = '', $skeyword = '', $sop = 'OR')
-	{
-		$result = $this->_get_list_common($select = '', $join = '', $limit, $offset, $where, $like, $findex, $forder, $sfield, $skeyword, $sop);
-		return $result;
-	}
-
-
 	public function get_login_success_count($type = 'd', $start_date = '', $end_date = '', $orderby = 'asc')
 	{
 		if (empty($start_date) OR empty($end_date)) {
