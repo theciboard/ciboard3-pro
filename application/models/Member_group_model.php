@@ -34,13 +34,6 @@ class Member_group_model extends CB_Model
 	}
 
 
-	public function get_admin_list($limit = '', $offset = '', $where = '', $like = '', $findex = '', $forder = '', $sfield = '', $skeyword = '', $sop = 'OR')
-	{
-		$result = $this->_get_list_common($select = '', $join = '', $limit, $offset, $where, $like, $findex, $forder, $sfield, $skeyword, $sop);
-		return $result;
-	}
-
-
 	public function get_all_group()
 	{
 		$cachename = $this->cache_name;

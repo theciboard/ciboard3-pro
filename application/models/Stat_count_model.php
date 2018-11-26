@@ -28,13 +28,6 @@ class Stat_count_model extends CB_Model
 	}
 
 
-	public function get_admin_list($limit = '', $offset = '', $where = '', $like = '', $findex = '', $forder = '', $sfield = '', $skeyword = '', $sop = 'OR')
-	{
-		$result = $this->_get_list_common($select = '', $join = '', $limit, $offset, $where, $like, $findex, $forder, $sfield, $skeyword, $sop);
-		return $result;
-	}
-
-
 	public function get_by_date($start_date = '', $end_date = '')
 	{
 		if (empty($start_date) OR empty($end_date)) {

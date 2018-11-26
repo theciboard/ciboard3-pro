@@ -28,13 +28,6 @@ class Member_dormant_notify_model extends CB_Model
 	}
 
 
-	public function get_admin_list($limit = '', $offset = '', $where = '', $like = '', $findex = '', $forder = '', $sfield = '', $skeyword = '', $sop = 'OR')
-	{
-		$result = $this->_get_list_common($select = '', $join = '', $limit, $offset, $where, $like, $findex, $forder, $sfield, $skeyword, $sop);
-		return $result;
-	}
-
-
 	/**
 	 * 휴면회원으로 전환되기 전에 이메일을 보내야할 대상에 있는 회원 명단
 	 */

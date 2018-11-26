@@ -75,12 +75,4 @@ class Member_dormant_model extends CB_Model
 		$result = $this->db->get();
 		return $result->row_array();
 	}
-
-
-	public function get_admin_list($limit = '', $offset = '', $where = '', $like = '', $findex = '', $forder = '', $sfield = '', $skeyword = '', $sop = 'OR')
-	{
-		$result = $this->_get_list_common($select = '', $join = '', $limit, $offset, $where, $like, $findex, $forder, $sfield, $skeyword, $sop);
-
-		return $result;
-	}
 }
