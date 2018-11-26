@@ -5,7 +5,7 @@
 a > * {line-height: 0;}
 header, nav {display: block;}
 img {border: medium none;}
-body {font-family: 나눔고딕,NanumGothic,돋움,Dotum,Arial,Helvetica,sans-serif;font-size: 13px;}
+body {font-family: 'Nanum Gothic',나눔고딕,NanumGothic,돋움,Dotum,Arial,Helvetica,sans-serif;font-size: 13px;}
 a {color: #1e8fc6;text-decoration: none;}
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family: inherit;margin:0;}

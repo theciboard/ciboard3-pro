@@ -4,7 +4,7 @@
 * {margin: 0;padding: 0;}
 a > * {line-height: 0;}
 img {border: medium none;}
-body {font-family: 나눔고딕,NanumGothic,돋움,Dotum,Arial,Helvetica,sans-serif;font-size: 13px; }
+body {font-family: 'Nanum Gothic',나눔고딕,NanumGothic,돋움,Dotum,Arial,Helvetica,sans-serif;font-size: 13px; }
 a {color:#000;text-decoration: none;}
 a:hover{color:#2773ae;}
 
