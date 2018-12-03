@@ -26,7 +26,7 @@
 				<p><strong>문자발송</strong> : 문자 기능을 사용하는 사이트에서만 문자가 발송됩니다.</p>
 				<hr />
 				<p><strong>치환가능변수</strong></p>
-				<p>일반 : <strong>{홈페이지명}</strong>, <strong>{회사명}</strong>, <strong>{홈페이지주소}</strong>
+				<p>일반 : <strong>{홈페이지명}</strong>, <strong>{회사명}</strong>, <strong>{홈페이지주소}</strong></p>
 				<p>댓글관련 : <strong>{댓글내용}</strong>, <strong>{댓글작성자닉네임}</strong>, <strong>{댓글작성자아이디}</strong>, <strong>{댓글작성시간}</strong>, <strong>{댓글주소}</strong></p>
 				<p>원글관련 : <strong>{게시글제목}</strong>, <strong>{게시글내용}</strong>, <strong>{게시글작성자닉네임}</strong>, <strong>{게시글작성자아이디}</strong>, <strong>{게시글작성시간}</strong>, <strong>{게시글주소}</strong></p>
 				<p>게시판관련 : <strong>{게시판명}</strong>, <strong>{게시판주소}</strong></p>
