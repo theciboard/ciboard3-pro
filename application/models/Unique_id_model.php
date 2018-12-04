@@ -32,7 +32,8 @@ class Unique_id_model extends CB_Model
 	{
 		$this->db->query('LOCK TABLE ' . $this->db->dbprefix . $this->_table . ' WRITE');
 		while (true) {
-			$key = cdate('YmdHis') . str_pad((int)(microtime()*100), 2, "0", STR_PAD_LEFT);
+			$mt_arr = explode(' ', microtime());
+			$key = cdate('YmdHis') . str_pad((int)($mt_arr[0]*10000), 4, "0", STR_PAD_LEFT);
 			$insertdata = array(
 				'unq_id' => $key,
 				'unq_ip' => $ip,
@@ -43,7 +44,7 @@ class Unique_id_model extends CB_Model
 				break; // 쿼리가 정상이면 빠진다.
 			}
 
-			usleep(10000); // 100분의 1초를 쉰다
+			usleep(100); // 10000분의 1초를 쉰다
 		}
 		$this->db->query('UNLOCK TABLES');
 
