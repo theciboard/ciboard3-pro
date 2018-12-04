@@ -36,308 +36,306 @@
 		?>
 			<input type="hidden" name="is_submit" value="1" />
 			<input type="hidden" name="<?php echo element('primary_key', $view); ?>"	value="<?php echo element(element('primary_key', $view), element('data', $view)); ?>" />
-			<div class="form-horizontal">
-				<div class="form-group">
-					<label class="col-sm-2 control-label">포인트기능사용</label>
-					<div class="col-sm-8">
-						<label for="use_point" class="checkbox-inline">
-							<input type="checkbox" name="use_point" id="use_point" value="1" <?php echo set_checkbox('use_point', '1', (element('use_point', element('data', $view)) ? true : false)); ?> /> 사용합니다
-						</label>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_use_point" class="checkbox-inline">
-							<input type="checkbox" name="grp[use_point]" id="grp_use_point" value="1" /> 그룹적용
-						</label>
-						<label for="all_use_point" class="checkbox-inline">
-							<input type="checkbox" name="all[use_point]" id="all_use_point" value="1" /> 전체적용
-						</label>
-					</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">포인트기능사용</label>
+				<div class="col-sm-8">
+					<label for="use_point" class="checkbox-inline">
+						<input type="checkbox" name="use_point" id="use_point" value="1" <?php echo set_checkbox('use_point', '1', (element('use_point', element('data', $view)) ? true : false)); ?> /> 사용합니다
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">포인트안내</label>
-					<div class="col-sm-8">
-						<label for="use_point_info" class="checkbox-inline">
-							<input type="checkbox" name="use_point_info" id="use_point_info" value="1" <?php echo set_checkbox('use_point_info', '1', (element('use_point_info', element('data', $view)) ? true : false)); ?> /> 사용합니다
-						</label>
-						<div class="help-inline">게시판 목록에 포인트점수에 대한 설명이 나옵니다</div>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_use_point_info" class="checkbox-inline">
-							<input type="checkbox" name="grp[use_point_info]" id="grp_use_point_info" value="1" /> 그룹적용
-						</label>
-						<label for="all_use_point_info" class="checkbox-inline">
-							<input type="checkbox" name="all[use_point_info]" id="all_use_point_info" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_use_point" class="checkbox-inline">
+						<input type="checkbox" name="grp[use_point]" id="grp_use_point" value="1" /> 그룹적용
+					</label>
+					<label for="all_use_point" class="checkbox-inline">
+						<input type="checkbox" name="all[use_point]" id="all_use_point" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">원글 작성</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_write" value="<?php echo set_value('point_write', (int) element('point_write', element('data', $view))); ?>" />
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_write" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_write]" id="grp_point_write" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_write" class="checkbox-inline">
-							<input type="checkbox" name="all[point_write]" id="all_point_write" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">포인트안내</label>
+				<div class="col-sm-8">
+					<label for="use_point_info" class="checkbox-inline">
+						<input type="checkbox" name="use_point_info" id="use_point_info" value="1" <?php echo set_checkbox('use_point_info', '1', (element('use_point_info', element('data', $view)) ? true : false)); ?> /> 사용합니다
+					</label>
+					<div class="help-inline">게시판 목록에 포인트점수에 대한 설명이 나옵니다</div>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">댓글 작성</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_comment" value="<?php echo set_value('point_comment', (int) element('point_comment', element('data', $view))); ?>" />
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_comment" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_comment]" id="grp_point_comment" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_comment" class="checkbox-inline">
-							<input type="checkbox" name="all[point_comment]" id="all_point_comment" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_use_point_info" class="checkbox-inline">
+						<input type="checkbox" name="grp[use_point_info]" id="grp_use_point_info" value="1" /> 그룹적용
+					</label>
+					<label for="all_use_point_info" class="checkbox-inline">
+						<input type="checkbox" name="all[use_point_info]" id="all_use_point_info" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">작성자 본인이 원글 삭제</label>
-					<div class="col-sm-8">
-						원글작성시 지급했던 포인트 회수 +
-						<input type="number" class="form-control" name="point_post_delete" value="<?php echo set_value('point_post_delete', (int) element('point_post_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
-						<span class="help-inline">추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_post_delete" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_post_delete]" id="grp_point_post_delete" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_post_delete" class="checkbox-inline">
-							<input type="checkbox" name="all[point_post_delete]" id="all_point_post_delete" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">원글 작성</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_write" value="<?php echo set_value('point_write', (int) element('point_write', element('data', $view))); ?>" />
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">관리자가 원글 삭제</label>
-					<div class="col-sm-8">
-						원글작성시 지급했던 포인트 회수 +
-						<input type="number" class="form-control" name="point_admin_post_delete" value="<?php echo set_value('point_admin_post_delete', (int) element('point_admin_post_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
-						<span class="help-inline">관리자가 일반사용자의 글을 삭제시 해당 사용자에게 추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_admin_post_delete" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_admin_post_delete]" id="grp_point_admin_post_delete" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_admin_post_delete" class="checkbox-inline">
-							<input type="checkbox" name="all[point_admin_post_delete]" id="all_point_admin_post_delete" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_write" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_write]" id="grp_point_write" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_write" class="checkbox-inline">
+						<input type="checkbox" name="all[point_write]" id="all_point_write" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">작성자 본인이 댓글 삭제</label>
-					<div class="col-sm-8">
-						댓글작성시 지급했던 포인트 회수 +
-						<input type="number" class="form-control" name="point_comment_delete" value="<?php echo set_value('point_comment_delete', (int) element('point_comment_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
-						<span class="help-inline">추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_comment_delete" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_comment_delete]" id="grp_point_comment_delete" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_comment_delete" class="checkbox-inline">
-							<input type="checkbox" name="all[point_comment_delete]" id="all_point_comment_delete" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">댓글 작성</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_comment" value="<?php echo set_value('point_comment', (int) element('point_comment', element('data', $view))); ?>" />
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">관리자가 댓글 삭제</label>
-					<div class="col-sm-8">
-						댓글작성시 지급했던 포인트 회수 +
-						<input type="number" class="form-control" name="point_admin_comment_delete" value="<?php echo set_value('point_admin_comment_delete', (int) element('point_admin_comment_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
-						<span class="help-inline">관리자가 일반사용자의 글을 삭제시 해당 사용자에게 추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_admin_comment_delete" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_admin_comment_delete]" id="grp_point_admin_comment_delete" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_admin_comment_delete" class="checkbox-inline">
-							<input type="checkbox" name="all[point_admin_comment_delete]" id="all_point_admin_comment_delete" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_comment" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_comment]" id="grp_point_comment" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_comment" class="checkbox-inline">
+						<input type="checkbox" name="all[point_comment]" id="all_point_comment" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">파일업로드</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_fileupload" value="<?php echo set_value('point_fileupload', (int) element('point_fileupload', element('data', $view))); ?>" /> <span class="help-inline">파일 업로드시 1회</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_fileupload" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_fileupload]" id="grp_point_fileupload" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_fileupload" class="checkbox-inline">
-							<input type="checkbox" name="all[point_fileupload]" id="all_point_fileupload" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">작성자 본인이 원글 삭제</label>
+				<div class="col-sm-8">
+					원글작성시 지급했던 포인트 회수 +
+					<input type="number" class="form-control" name="point_post_delete" value="<?php echo set_value('point_post_delete', (int) element('point_post_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
+					<span class="help-inline">추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">파일 다운로드</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_filedownload" value="<?php echo set_value('point_filedownload', (int) element('point_filedownload', element('data', $view))); ?>" /> <span class="help-inline">파일 다운로드한 사람에게 1회 적용됩니다</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_filedownload" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_filedownload]" id="grp_point_filedownload" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_filedownload" class="checkbox-inline">
-							<input type="checkbox" name="all[point_filedownload]" id="all_point_filedownload" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_post_delete" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_post_delete]" id="grp_point_post_delete" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_post_delete" class="checkbox-inline">
+						<input type="checkbox" name="all[point_post_delete]" id="all_point_post_delete" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">파일다운로드시업로더에게</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_filedownload_uploader" value="<?php echo set_value('point_filedownload_uploader', (int) element('point_filedownload_uploader', element('data', $view))); ?>" /> <span class="help-inline">파일을 다운로드 할 때마다 파일을 업로드한 사람에게 매번 포인트가 지급됩니다</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_filedownload_uploader" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_filedownload_uploader]" id="grp_point_filedownload_uploader" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_filedownload_uploader" class="checkbox-inline">
-							<input type="checkbox" name="all[point_filedownload_uploader]" id="all_point_filedownload_uploader" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">관리자가 원글 삭제</label>
+				<div class="col-sm-8">
+					원글작성시 지급했던 포인트 회수 +
+					<input type="number" class="form-control" name="point_admin_post_delete" value="<?php echo set_value('point_admin_post_delete', (int) element('point_admin_post_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
+					<span class="help-inline">관리자가 일반사용자의 글을 삭제시 해당 사용자에게 추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">게시글 조회</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_read" value="<?php echo set_value('point_read', (int) element('point_read', element('data', $view))); ?>" />
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_read" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_read]" id="grp_point_read" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_read" class="checkbox-inline">
-							<input type="checkbox" name="all[point_read]" id="all_point_read" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_admin_post_delete" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_admin_post_delete]" id="grp_point_admin_post_delete" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_admin_post_delete" class="checkbox-inline">
+						<input type="checkbox" name="all[point_admin_post_delete]" id="all_point_admin_post_delete" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">원글 추천함</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_post_like" value="<?php echo set_value('point_post_like', (int) element('point_post_like', element('data', $view))); ?>" />
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_post_like" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_post_like]" id="grp_point_post_like" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_post_like" class="checkbox-inline">
-							<input type="checkbox" name="all[point_post_like]" id="all_point_post_like" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">작성자 본인이 댓글 삭제</label>
+				<div class="col-sm-8">
+					댓글작성시 지급했던 포인트 회수 +
+					<input type="number" class="form-control" name="point_comment_delete" value="<?php echo set_value('point_comment_delete', (int) element('point_comment_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
+					<span class="help-inline">추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">원글 비추천함</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_post_dislike" value="<?php echo set_value('point_post_dislike', (int) element('point_post_dislike', element('data', $view))); ?>" />
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_post_dislike" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_post_dislike]" id="grp_point_post_dislike" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_post_dislike" class="checkbox-inline">
-							<input type="checkbox" name="all[point_post_dislike]" id="all_point_post_dislike" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_comment_delete" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_comment_delete]" id="grp_point_comment_delete" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_comment_delete" class="checkbox-inline">
+						<input type="checkbox" name="all[point_comment_delete]" id="all_point_comment_delete" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">원글 추천받음</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_post_liked" value="<?php echo set_value('point_post_liked', (int) element('point_post_liked', element('data', $view))); ?>" />
-						<span class="help-inline">원글 작성자에게 지급되는 포인트입니다</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_post_liked" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_post_liked]" id="grp_point_post_liked" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_post_liked" class="checkbox-inline">
-							<input type="checkbox" name="all[point_post_liked]" id="all_point_post_liked" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">관리자가 댓글 삭제</label>
+				<div class="col-sm-8">
+					댓글작성시 지급했던 포인트 회수 +
+					<input type="number" class="form-control" name="point_admin_comment_delete" value="<?php echo set_value('point_admin_comment_delete', (int) element('point_admin_comment_delete', element('data', $view))); ?>" /> 포인트를 추가로 차감
+					<span class="help-inline">관리자가 일반사용자의 글을 삭제시 해당 사용자에게 추가로 차감하기 원하는 포인트를 양수로 입력해주세요</span>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">원글 비추천받음</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_post_disliked" value="<?php echo set_value('point_post_disliked', (int) element('point_post_disliked', element('data', $view))); ?>" />
-						<span class="help-inline">원글 작성자에게 지급되는 포인트입니다</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_post_disliked" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_post_disliked]" id="grp_point_post_disliked" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_post_disliked" class="checkbox-inline">
-							<input type="checkbox" name="all[point_post_disliked]" id="all_point_post_disliked" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_admin_comment_delete" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_admin_comment_delete]" id="grp_point_admin_comment_delete" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_admin_comment_delete" class="checkbox-inline">
+						<input type="checkbox" name="all[point_admin_comment_delete]" id="all_point_admin_comment_delete" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">댓글 추천함</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_comment_like" value="<?php echo set_value('point_comment_like', (int) element('point_comment_like', element('data', $view))); ?>" />
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_comment_like" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_comment_like]" id="grp_point_comment_like" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_comment_like" class="checkbox-inline">
-							<input type="checkbox" name="all[point_comment_like]" id="all_point_comment_like" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">파일업로드</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_fileupload" value="<?php echo set_value('point_fileupload', (int) element('point_fileupload', element('data', $view))); ?>" /> <span class="help-inline">파일 업로드시 1회</span>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">댓글 비추천함</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_comment_dislike" value="<?php echo set_value('point_comment_dislike', (int) element('point_comment_dislike', element('data', $view))); ?>" />
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_comment_dislike" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_comment_dislike]" id="grp_point_comment_dislike" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_comment_dislike" class="checkbox-inline">
-							<input type="checkbox" name="all[point_comment_dislike]" id="all_point_comment_dislike" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_fileupload" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_fileupload]" id="grp_point_fileupload" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_fileupload" class="checkbox-inline">
+						<input type="checkbox" name="all[point_fileupload]" id="all_point_fileupload" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">댓글 추천받음</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_comment_liked" value="<?php echo set_value('point_comment_liked', (int) element('point_comment_liked', element('data', $view))); ?>" />
-						<span class="help-inline">댓글 작성자에게 지급되는 포인트입니다</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_comment_liked" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_comment_liked]" id="grp_point_comment_liked" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_comment_liked" class="checkbox-inline">
-							<input type="checkbox" name="all[point_comment_liked]" id="all_point_comment_liked" value="1" /> 전체적용
-						</label>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">파일 다운로드</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_filedownload" value="<?php echo set_value('point_filedownload', (int) element('point_filedownload', element('data', $view))); ?>" /> <span class="help-inline">파일 다운로드한 사람에게 1회 적용됩니다</span>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">댓글 비추천받음</label>
-					<div class="col-sm-8">
-						<input type="number" class="form-control" name="point_comment_disliked" value="<?php echo set_value('point_comment_disliked', (int) element('point_comment_disliked', element('data', $view))); ?>" />
-						<span class="help-inline">댓글 작성자에게 지급되는 포인트입니다</span>
-					</div>
-					<div class="col-sm-2">
-						<label for="grp_point_comment_disliked" class="checkbox-inline">
-							<input type="checkbox" name="grp[point_comment_disliked]" id="grp_point_comment_disliked" value="1" /> 그룹적용
-						</label>
-						<label for="all_point_comment_disliked" class="checkbox-inline">
-							<input type="checkbox" name="all[point_comment_disliked]" id="all_point_comment_disliked" value="1" /> 전체적용
-						</label>
-					</div>
+				<div class="col-sm-2">
+					<label for="grp_point_filedownload" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_filedownload]" id="grp_point_filedownload" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_filedownload" class="checkbox-inline">
+						<input type="checkbox" name="all[point_filedownload]" id="all_point_filedownload" value="1" /> 전체적용
+					</label>
 				</div>
-				<div class="btn-group pull-right" role="group" aria-label="...">
-					<a href="<?php echo admin_url($this->pagedir); ?>" class="btn btn-default btn-sm">목록으로</a>
-					<button type="submit" class="btn btn-success btn-sm">저장하기</button>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">파일다운로드시업로더에게</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_filedownload_uploader" value="<?php echo set_value('point_filedownload_uploader', (int) element('point_filedownload_uploader', element('data', $view))); ?>" /> <span class="help-inline">파일을 다운로드 할 때마다 파일을 업로드한 사람에게 매번 포인트가 지급됩니다</span>
 				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_filedownload_uploader" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_filedownload_uploader]" id="grp_point_filedownload_uploader" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_filedownload_uploader" class="checkbox-inline">
+						<input type="checkbox" name="all[point_filedownload_uploader]" id="all_point_filedownload_uploader" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">게시글 조회</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_read" value="<?php echo set_value('point_read', (int) element('point_read', element('data', $view))); ?>" />
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_read" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_read]" id="grp_point_read" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_read" class="checkbox-inline">
+						<input type="checkbox" name="all[point_read]" id="all_point_read" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">원글 추천함</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_post_like" value="<?php echo set_value('point_post_like', (int) element('point_post_like', element('data', $view))); ?>" />
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_post_like" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_post_like]" id="grp_point_post_like" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_post_like" class="checkbox-inline">
+						<input type="checkbox" name="all[point_post_like]" id="all_point_post_like" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">원글 비추천함</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_post_dislike" value="<?php echo set_value('point_post_dislike', (int) element('point_post_dislike', element('data', $view))); ?>" />
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_post_dislike" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_post_dislike]" id="grp_point_post_dislike" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_post_dislike" class="checkbox-inline">
+						<input type="checkbox" name="all[point_post_dislike]" id="all_point_post_dislike" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">원글 추천받음</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_post_liked" value="<?php echo set_value('point_post_liked', (int) element('point_post_liked', element('data', $view))); ?>" />
+					<span class="help-inline">원글 작성자에게 지급되는 포인트입니다</span>
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_post_liked" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_post_liked]" id="grp_point_post_liked" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_post_liked" class="checkbox-inline">
+						<input type="checkbox" name="all[point_post_liked]" id="all_point_post_liked" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">원글 비추천받음</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_post_disliked" value="<?php echo set_value('point_post_disliked', (int) element('point_post_disliked', element('data', $view))); ?>" />
+					<span class="help-inline">원글 작성자에게 지급되는 포인트입니다</span>
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_post_disliked" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_post_disliked]" id="grp_point_post_disliked" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_post_disliked" class="checkbox-inline">
+						<input type="checkbox" name="all[point_post_disliked]" id="all_point_post_disliked" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">댓글 추천함</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_comment_like" value="<?php echo set_value('point_comment_like', (int) element('point_comment_like', element('data', $view))); ?>" />
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_comment_like" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_comment_like]" id="grp_point_comment_like" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_comment_like" class="checkbox-inline">
+						<input type="checkbox" name="all[point_comment_like]" id="all_point_comment_like" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">댓글 비추천함</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_comment_dislike" value="<?php echo set_value('point_comment_dislike', (int) element('point_comment_dislike', element('data', $view))); ?>" />
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_comment_dislike" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_comment_dislike]" id="grp_point_comment_dislike" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_comment_dislike" class="checkbox-inline">
+						<input type="checkbox" name="all[point_comment_dislike]" id="all_point_comment_dislike" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">댓글 추천받음</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_comment_liked" value="<?php echo set_value('point_comment_liked', (int) element('point_comment_liked', element('data', $view))); ?>" />
+					<span class="help-inline">댓글 작성자에게 지급되는 포인트입니다</span>
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_comment_liked" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_comment_liked]" id="grp_point_comment_liked" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_comment_liked" class="checkbox-inline">
+						<input type="checkbox" name="all[point_comment_liked]" id="all_point_comment_liked" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">댓글 비추천받음</label>
+				<div class="col-sm-8">
+					<input type="number" class="form-control" name="point_comment_disliked" value="<?php echo set_value('point_comment_disliked', (int) element('point_comment_disliked', element('data', $view))); ?>" />
+					<span class="help-inline">댓글 작성자에게 지급되는 포인트입니다</span>
+				</div>
+				<div class="col-sm-2">
+					<label for="grp_point_comment_disliked" class="checkbox-inline">
+						<input type="checkbox" name="grp[point_comment_disliked]" id="grp_point_comment_disliked" value="1" /> 그룹적용
+					</label>
+					<label for="all_point_comment_disliked" class="checkbox-inline">
+						<input type="checkbox" name="all[point_comment_disliked]" id="all_point_comment_disliked" value="1" /> 전체적용
+					</label>
+				</div>
+			</div>
+			<div class="btn-group pull-right" role="group" aria-label="...">
+				<a href="<?php echo admin_url($this->pagedir); ?>" class="btn btn-default btn-sm">목록으로</a>
+				<button type="submit" class="btn btn-success btn-sm">저장하기</button>
 			</div>
 		<?php echo form_close(); ?>
 	</div>

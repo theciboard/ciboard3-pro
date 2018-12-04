@@ -19,22 +19,20 @@
 				<p>파비콘은 16px * 16px 크기의 이미지 ico 확장자로 등록해 주십시요.</p>
 				<p>파비콘은 즐겨찾기(favorites) 와 아이콘(icon)의 합성어로 주소창 좌측에 조그만 아이콘으로 표시됩니다.</p>
 			</div>
-			<div class="form-horizontal">
-				<div class="form-group">
-					<label class="col-sm-2 control-label">파비콘</label>
-					<div class="col-sm-10">
-						<?php
-						if (element('site_favicon', element('data', $view))) {
-						?>
-							<img src="<?php echo site_url(config_item('uploads_dir') . '/favicon/' . element('site_favicon', element('data', $view))); ?>" alt="파비콘" title="파비콘" />
-							<label for="site_favicon_del">
-								<input type="checkbox" name="site_favicon_del" id="site_favicon_del" value="1"/> 삭제
-							</label>
-						<?php
-						}
-						?>
-						<input type="file" name="site_favicon" id="site_favicon" />
-					</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">파비콘</label>
+				<div class="col-sm-10">
+					<?php
+					if (element('site_favicon', element('data', $view))) {
+					?>
+						<img src="<?php echo site_url(config_item('uploads_dir') . '/favicon/' . element('site_favicon', element('data', $view))); ?>" alt="파비콘" title="파비콘" />
+						<label for="site_favicon_del">
+							<input type="checkbox" name="site_favicon_del" id="site_favicon_del" value="1"/> 삭제
+						</label>
+					<?php
+					}
+					?>
+					<input type="file" name="site_favicon" id="site_favicon" />
 				</div>
 			</div>
 			<div class="btn-group pull-right" role="group" aria-label="...">

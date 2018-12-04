@@ -57,13 +57,11 @@
 			$attributes = array('class' => 'form-horizontal', 'name' => 'fadminwrite', 'id' => 'fadminwrite');
 			echo form_open(current_full_url(), $attributes);
 			?>
-				<div class="form-horizontal">
-					<div class="form-group">
-						<label class="col-sm-2 control-label">배너 위치명</label>
-						<div class="col-sm-8 form-inline">
-							<input type="text" class="form-control" name="bng_name" />
-							<button type="submit" class="btn btn-success btn-sm">추가하기</button>
-						</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">배너 위치명</label>
+					<div class="col-sm-8 form-inline">
+						<input type="text" class="form-control" name="bng_name" />
+						<button type="submit" class="btn btn-success btn-sm">추가하기</button>
 					</div>
 				</div>
 			<?php echo form_close(); ?>

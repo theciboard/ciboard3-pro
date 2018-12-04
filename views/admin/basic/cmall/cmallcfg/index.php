@@ -19,41 +19,39 @@
 		echo form_open(current_full_url(), $attributes);
 		?>
 			<input type="hidden" name="is_submit" value="1" />
-			<div class="form-horizontal">
-				<div class="form-group">
-					<label class="col-sm-2 control-label">컨텐츠몰 기능 사용</label>
-					<div class="col-sm-10">
-						<label for="use_cmall" class="checkbox-inline">
-						<input type="checkbox" name="use_cmall" id="use_cmall" value="1" <?php echo set_checkbox('use_cmall', '1', (element('use_cmall', element('data', $view)) ? true : false)); ?> /> 사용합니다
-						</label>
-						<div class="help-inline">페이지 주소 : <a href="<?php echo site_url('cmall'); ?>" target="_blank"><?php echo site_url('cmall'); ?></a></div>
-					</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">컨텐츠몰 기능 사용</label>
+				<div class="col-sm-10">
+					<label for="use_cmall" class="checkbox-inline">
+					<input type="checkbox" name="use_cmall" id="use_cmall" value="1" <?php echo set_checkbox('use_cmall', '1', (element('use_cmall', element('data', $view)) ? true : false)); ?> /> 사용합니다
+					</label>
+					<div class="help-inline">페이지 주소 : <a href="<?php echo site_url('cmall'); ?>" target="_blank"><?php echo site_url('cmall'); ?></a></div>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">컨텐츠몰명</label>
-					<div class="col-sm-10 form-inline">
-							<input type="text" class="form-control" name="cmall_name" value="<?php echo set_value('cmall_name', element('cmall_name', element('data', $view))); ?>" />
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">컨텐츠몰명</label>
+				<div class="col-sm-10 form-inline">
+						<input type="text" class="form-control" name="cmall_name" value="<?php echo set_value('cmall_name', element('cmall_name', element('data', $view))); ?>" />
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">예치금으로 상품구매 가능</label>
-					<div class="col-sm-10">
-						<div class="form-group">
-						<label for="use_cmall_deposit_to_contents" class="checkbox-inline">
-						<input type="checkbox" name="use_cmall_deposit_to_contents" id="use_cmall_deposit_to_contents" value="1" <?php echo set_checkbox('use_cmall_deposit_to_contents', '1', (element('use_cmall_deposit_to_contents', element('data', $view)) ? true : false)); ?> /> 가능합니다
-						</label>
-					</div>
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">예치금으로 상품구매 가능</label>
+				<div class="col-sm-10">
+					<div class="form-group">
+					<label for="use_cmall_deposit_to_contents" class="checkbox-inline">
+					<input type="checkbox" name="use_cmall_deposit_to_contents" id="use_cmall_deposit_to_contents" value="1" <?php echo set_checkbox('use_cmall_deposit_to_contents', '1', (element('use_cmall_deposit_to_contents', element('data', $view)) ? true : false)); ?> /> 가능합니다
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">장바구니 보관기간</label>
-					<div class="col-sm-10">
-						<input type="number" class="form-control" name="cmall_cart_keep_days" value="<?php echo set_value('cmall_cart_keep_days', (int) element('cmall_cart_keep_days', element('data', $view))); ?>" /> 일
-					</div>
 				</div>
-				<div class="btn-group pull-right" role="group" aria-label="...">
-					<button type="submit" class="btn btn-success btn-sm">저장하기</button>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">장바구니 보관기간</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" name="cmall_cart_keep_days" value="<?php echo set_value('cmall_cart_keep_days', (int) element('cmall_cart_keep_days', element('data', $view))); ?>" /> 일
 				</div>
+			</div>
+			<div class="btn-group pull-right" role="group" aria-label="...">
+				<button type="submit" class="btn btn-success btn-sm">저장하기</button>
 			</div>
 		<?php echo form_close(); ?>
 	</div>

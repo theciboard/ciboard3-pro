@@ -76,13 +76,11 @@
 			echo form_open(current_full_url(), $attributes);
 			?>
 				<input type="hidden" name="bgr_id"	value="<?php echo element('bgr_id', element('data', $view)); ?>" />
-				<div class="form-horizontal">
-					<div class="form-group">
-						<label class="col-sm-2 control-label">회원아이디</label>
-						<div class="col-sm-10 form-inline">
-							<input type="text" class="form-control" name="userid" />
-							<button type="submit" class="btn btn-success btn-sm">추가하기</button>
-						</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">회원아이디</label>
+					<div class="col-sm-10 form-inline">
+						<input type="text" class="form-control" name="userid" />
+						<button type="submit" class="btn btn-success btn-sm">추가하기</button>
 					</div>
 				</div>
 			<?php echo form_close(); ?>

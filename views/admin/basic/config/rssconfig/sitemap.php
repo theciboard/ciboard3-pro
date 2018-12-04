@@ -14,42 +14,40 @@
 		echo form_open(current_full_url(), $attributes);
 		?>
 			<input type="hidden" name="is_submit" value="1" />
-			<div class="form-horizontal">
-				<div class="form-group">
-					<label class="col-sm-2 control-label">사이트맵 사용</label>
-					<div class="col-sm-10">
-						<label for="use_sitemap" class="checkbox-inline">
-						<input type="checkbox" name="use_sitemap" id="use_sitemap" value="1" <?php echo set_checkbox('use_sitemap', '1', (element('use_sitemap', element('data', $view)) ? true : false)); ?> /> 사용합니다
-						</label>
-						<label class=" form-inline" style="padding-top:7px;padding-left:10px;">
-							<span class="fa fa-rss"></span>
-							<a href="<?php echo site_url('sitemap.xml'); ?>" target="_blank"><?php echo site_url('sitemap.xml'); ?></a>
-						</label>
-					</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">사이트맵 사용</label>
+				<div class="col-sm-10">
+					<label for="use_sitemap" class="checkbox-inline">
+					<input type="checkbox" name="use_sitemap" id="use_sitemap" value="1" <?php echo set_checkbox('use_sitemap', '1', (element('use_sitemap', element('data', $view)) ? true : false)); ?> /> 사용합니다
+					</label>
+					<label class=" form-inline" style="padding-top:7px;padding-left:10px;">
+						<span class="fa fa-rss"></span>
+						<a href="<?php echo site_url('sitemap.xml'); ?>" target="_blank"><?php echo site_url('sitemap.xml'); ?></a>
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">포함된 게시판 목록</label>
-					<div class="col-sm-10 form-inline" style="padding-top:7px;">
-						<?php
-						if (element('boardlist', $view)) {
-							foreach (element('boardlist', $view) as $rval) {
-						?>
-								<label for="brd_id_<?php echo element('brd_id', $rval)?>" class="checkbox-inline"><input type="checkbox" name="brd_id[<?php echo element('brd_id', $rval)?>]" value="1" id="brd_id_<?php echo element('brd_id', $rval)?>" <?php echo set_checkbox('brd_id[' . element('brd_id', $rval) . ']', '1', (element('usesitemap', $rval) ? true : false)); ?> /> <?php echo html_escape(element('brd_name', $rval)); ?></label>
-						<?php
-							}
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">포함된 게시판 목록</label>
+				<div class="col-sm-10 form-inline" style="padding-top:7px;">
+					<?php
+					if (element('boardlist', $view)) {
+						foreach (element('boardlist', $view) as $rval) {
+					?>
+							<label for="brd_id_<?php echo element('brd_id', $rval)?>" class="checkbox-inline"><input type="checkbox" name="brd_id[<?php echo element('brd_id', $rval)?>]" value="1" id="brd_id_<?php echo element('brd_id', $rval)?>" <?php echo set_checkbox('brd_id[' . element('brd_id', $rval) . ']', '1', (element('usesitemap', $rval) ? true : false)); ?> /> <?php echo html_escape(element('brd_name', $rval)); ?></label>
+					<?php
 						}
-						?>
-					</div>
+					}
+					?>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">사이트맵 출력 게시물수</label>
-					<div class="col-sm-10">
-						<input type="number" class="form-control" name="sitemap_count" id="sitemap_count" value="<?php echo set_value('sitemap_count', element('sitemap_count', element('data', $view))); ?>" />
-					</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">사이트맵 출력 게시물수</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" name="sitemap_count" id="sitemap_count" value="<?php echo set_value('sitemap_count', element('sitemap_count', element('data', $view))); ?>" />
 				</div>
-				<div class="btn-group pull-right" role="group" aria-label="...">
-					<button type="submit" class="btn btn-success btn-sm">저장하기</button>
-				</div>
+			</div>
+			<div class="btn-group pull-right" role="group" aria-label="...">
+				<button type="submit" class="btn btn-success btn-sm">저장하기</button>
 			</div>
 		<?php echo form_close(); ?>
 	</div>

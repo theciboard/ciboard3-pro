@@ -34,91 +34,89 @@
 		echo form_open(current_full_url(), $attributes);
 		?>
 			<input type="hidden" name="is_submit" value="1" />
-			<div class="form-horizontal">
-				<div class="table-responsive form-group form-group-sm">
-					<table class="table table-bordered table-hover table-striped">
-						<tbody>
-							<tr>
-								<th class="px200">위치</th>
-								<td>내용</td>
-								<td class="px200">치환가능변수</td>
-							</tr>
-							<tr class="bg bg-warning">
-								<th>기본설정</th>
-								<td>
-									<div class="config_meta">
-										<div class="start_config_meta">Title</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_title_default" value="<?php echo set_value('site_meta_title_default', element('site_meta_title_default', element('data', $view))); ?>" /></div>
-									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">meta description</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_description_default" value="<?php echo set_value('site_meta_description_default', element('site_meta_description_default', element('data', $view))); ?>" /></div>
-									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">meta keywords</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_keywords_default" value="<?php echo set_value('site_meta_keywords_default', element('site_meta_keywords_default', element('data', $view))); ?>" /></div>
-									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">meta author</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_author_default" value="<?php echo set_value('site_meta_author_default', element('site_meta_author_default', element('data', $view))); ?>" /></div>
-									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">page name</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_page_name_default" value="<?php echo set_value('site_page_name_default', element('site_page_name_default', element('data', $view))); ?>" /></div>
-									</div>
-								</td>
-								<td></td>
-							</tr>
-							<?php foreach (element('pagelist', $view) as $data) { ?>
-							<tr>
-								<th>
-									<?php echo element('name', $data); ?>
-									<?php if (element('controllers', $data) && is_array(element('controllers', $data))) { ?>
-										<div class="use_controllers">
-											<?php
-											$k= 0;
-											foreach (element('controllers', $data) as $cval) {
-												if ($k> 0) {
-													echo ',<br />';
-												}
-												echo $cval;
-												$k++;
+			<div class="table-responsive form-group form-group-sm">
+				<table class="table table-bordered table-hover table-striped">
+					<tbody>
+						<tr>
+							<th class="px200">위치</th>
+							<td>내용</td>
+							<td class="px200">치환가능변수</td>
+						</tr>
+						<tr class="bg bg-warning">
+							<th>기본설정</th>
+							<td>
+								<div class="config_meta">
+									<div class="start_config_meta">Title</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_title_default" value="<?php echo set_value('site_meta_title_default', element('site_meta_title_default', element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">meta description</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_description_default" value="<?php echo set_value('site_meta_description_default', element('site_meta_description_default', element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">meta keywords</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_keywords_default" value="<?php echo set_value('site_meta_keywords_default', element('site_meta_keywords_default', element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">meta author</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_author_default" value="<?php echo set_value('site_meta_author_default', element('site_meta_author_default', element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">page name</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_page_name_default" value="<?php echo set_value('site_page_name_default', element('site_page_name_default', element('data', $view))); ?>" /></div>
+								</div>
+							</td>
+							<td></td>
+						</tr>
+						<?php foreach (element('pagelist', $view) as $data) { ?>
+						<tr>
+							<th>
+								<?php echo element('name', $data); ?>
+								<?php if (element('controllers', $data) && is_array(element('controllers', $data))) { ?>
+									<div class="use_controllers">
+										<?php
+										$k= 0;
+										foreach (element('controllers', $data) as $cval) {
+											if ($k> 0) {
+												echo ',<br />';
 											}
-											?>
-										</div>
-									<?php }?>
-								</th>
-								<td>
-									<div class="config_meta">
-										<div class="start_config_meta">Title</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_title_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_title_' . element('key', $data), element('site_meta_title_' . element('key', $data), element('data', $view))); ?>" /></div>
+											echo $cval;
+											$k++;
+										}
+										?>
 									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">meta description</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_description_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_description_' . element('key', $data), element('site_meta_description_' . element('key', $data), element('data', $view))); ?>" /></div>
-									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">meta keywords</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_keywords_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_keywords_' . element('key', $data), element('site_meta_keywords_' . element('key', $data), element('data', $view))); ?>" /></div>
-									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">meta author</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_author_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_author_' . element('key', $data), element('site_meta_author_' . element('key', $data), element('data', $view))); ?>" /></div>
-									</div>
-									<div class="config_meta">
-										<div class="start_config_meta">page name</div>
-										<div class="content_config_meta"><input type="text" class="form-control" name="site_page_name_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_page_name_' . element('key', $data), element('site_page_name_' . element('key', $data), element('data', $view))); ?>" /></div>
-									</div>
-								</td>
-								<td><?php echo element('description', $data); ?></td>
-							</tr>
-						<?php } ?>
-						</tbody>
-					</table>
-				</div>
-				<div class="btn-group pull-right" role="group" aria-label="...">
-					<button type="submit" class="btn btn-success btn-sm">저장하기</button>
-				</div>
+								<?php }?>
+							</th>
+							<td>
+								<div class="config_meta">
+									<div class="start_config_meta">Title</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_title_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_title_' . element('key', $data), element('site_meta_title_' . element('key', $data), element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">meta description</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_description_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_description_' . element('key', $data), element('site_meta_description_' . element('key', $data), element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">meta keywords</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_keywords_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_keywords_' . element('key', $data), element('site_meta_keywords_' . element('key', $data), element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">meta author</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_meta_author_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_meta_author_' . element('key', $data), element('site_meta_author_' . element('key', $data), element('data', $view))); ?>" /></div>
+								</div>
+								<div class="config_meta">
+									<div class="start_config_meta">page name</div>
+									<div class="content_config_meta"><input type="text" class="form-control" name="site_page_name_<?php echo element('key', $data); ?>" value="<?php echo set_value('site_page_name_' . element('key', $data), element('site_page_name_' . element('key', $data), element('data', $view))); ?>" /></div>
+								</div>
+							</td>
+							<td><?php echo element('description', $data); ?></td>
+						</tr>
+					<?php } ?>
+					</tbody>
+				</table>
+			</div>
+			<div class="btn-group pull-right" role="group" aria-label="...">
+				<button type="submit" class="btn btn-success btn-sm">저장하기</button>
 			</div>
 		<?php echo form_close(); ?>
 	</div>

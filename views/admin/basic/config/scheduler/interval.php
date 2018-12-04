@@ -18,38 +18,36 @@
 		echo form_open(current_full_url(), $attributes);
 		?>
 			<input type="hidden" name="s" value="1" />
-			<div class="form-horizontal">
-				<div class="list-group">
+			<div class="list-group">
+				<div class="form-group list-group-item">
+					<div class="col-sm-1">정렬</div>
+					<div class="col-sm-2">ID</div>
+					<div class="col-sm-3">주기명</div>
+					<div class="col-sm-3">실행간격</div>
+					<div class="col-sm-2">등록된스케쥴러</div>
+					<div class="col-sm-1"><button type="button" class="btn btn-outline btn-primary btn-xs btn-add-rows">추가</button></div>
+				</div>
+				<div id="sortable">
+				<?php
+				if (element('result', element('data', $view))) {
+					foreach (element('result', element('data', $view)) as $key => $result) {
+				?>
 					<div class="form-group list-group-item">
-						<div class="col-sm-1">정렬</div>
-						<div class="col-sm-2">ID</div>
-						<div class="col-sm-3">주기명</div>
-						<div class="col-sm-3">실행간격</div>
-						<div class="col-sm-2">등록된스케쥴러</div>
-						<div class="col-sm-1"><button type="button" class="btn btn-outline btn-primary btn-xs btn-add-rows">추가</button></div>
+						<div class="col-sm-1"><div class="fa fa-arrows" style="cursor:pointer;"></div><input type="hidden" name="key[<?php echo $key; ?>]" value="<?php echo $key; ?>" /></div>
+						<div class="col-sm-2"><?php echo $key; ?><input type="hidden" name="field_name[]" value="<?php echo $key; ?>" /></div>
+						<div class="col-sm-3"><input type="text" class="form-control" name="display_name[]" value="<?php echo html_escape(element('display_name', $result)); ?>" placeholder="주기명" /></div>
+						<div class="col-sm-3"><input type="number" class="form-control" name="interval[]" value="<?php echo html_escape(element('interval', $result)); ?>" />초 (<?php echo seconds2human(element('interval', $result))?>)</div>
+						<div class="col-sm-2"><?php echo number_format(element('registered_scheduler', $result)); ?> 개</div>
+						<div class="col-sm-1"><button type="button" class="btn btn-outline btn-default btn-xs <?php echo element('registered_scheduler', $result) ? 'btn-alert-delete' : 'btn-delete-row'; ?>" >삭제</button></div>
 					</div>
-					<div id="sortable">
-					<?php
-					if (element('result', element('data', $view))) {
-						foreach (element('result', element('data', $view)) as $key => $result) {
-					?>
-						<div class="form-group list-group-item">
-							<div class="col-sm-1"><div class="fa fa-arrows" style="cursor:pointer;"></div><input type="hidden" name="key[<?php echo $key; ?>]" value="<?php echo $key; ?>" /></div>
-							<div class="col-sm-2"><?php echo $key; ?><input type="hidden" name="field_name[]" value="<?php echo $key; ?>" /></div>
-							<div class="col-sm-3"><input type="text" class="form-control" name="display_name[]" value="<?php echo html_escape(element('display_name', $result)); ?>" placeholder="주기명" /></div>
-							<div class="col-sm-3"><input type="number" class="form-control" name="interval[]" value="<?php echo html_escape(element('interval', $result)); ?>" />초 (<?php echo seconds2human(element('interval', $result))?>)</div>
-							<div class="col-sm-2"><?php echo number_format(element('registered_scheduler', $result)); ?> 개</div>
-							<div class="col-sm-1"><button type="button" class="btn btn-outline btn-default btn-xs <?php echo element('registered_scheduler', $result) ? 'btn-alert-delete' : 'btn-delete-row'; ?>" >삭제</button></div>
-						</div>
-					<?php
-						}
+				<?php
 					}
-					?>
-					</div>
+				}
+				?>
 				</div>
-				<div class="btn-group pull-right" role="group" aria-label="...">
-					<button type="submit" class="btn btn-success btn-sm">저장하기</button>
-				</div>
+			</div>
+			<div class="btn-group pull-right" role="group" aria-label="...">
+				<button type="submit" class="btn btn-success btn-sm">저장하기</button>
 			</div>
 		<?php echo form_close(); ?>
 	</div>

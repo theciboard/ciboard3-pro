@@ -11,30 +11,26 @@
 			echo form_open(current_full_url(), $attributes);
 			?>
 				<input type="hidden" name="poi_type"	value="toone" />
-				<div class="box-table">
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label class="col-sm-2 control-label">회원아이디</label>
-							<div class="col-sm-10 form-inline">
-								<input type="text" class="form-control" name="mem_userid" value="<?php echo set_value('mem_userid'); ?>" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label">포인트</label>
-							<div class="col-sm-10">
-								<input type="number" class="form-control" name="poi_point" value="<?php echo set_value('poi_point'); ?>" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label">내용</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="poi_content" value="<?php echo set_value('poi_content'); ?>" />
-							</div>
-						</div>
-						<div class="btn-group pull-right" role="group" aria-label="...">
-							<button type="submit" class="btn btn-outline btn-success btn-sm">특정회원 포인트 추가하기</button>
-						</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">회원아이디</label>
+					<div class="col-sm-10 form-inline">
+						<input type="text" class="form-control" name="mem_userid" value="<?php echo set_value('mem_userid'); ?>" />
 					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">포인트</label>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" name="poi_point" value="<?php echo set_value('poi_point'); ?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">내용</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="poi_content" value="<?php echo set_value('poi_content'); ?>" />
+					</div>
+				</div>
+				<div class="btn-group pull-right" role="group" aria-label="...">
+					<button type="submit" class="btn btn-outline btn-success btn-sm">특정회원 포인트 추가하기</button>
 				</div>
 			<?php echo form_close(); ?>
 		</div>
@@ -50,24 +46,20 @@
 			echo form_open(current_full_url(), $attributes);
 			?>
 				<input type="hidden" name="poi_type"	value="toall" />
-				<div class="box-table">
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label class="col-sm-2 control-label">포인트</label>
-							<div class="col-sm-10 form-inline">
-								<input type="number" class="form-control" name="poi_point_all" value="<?php echo set_value('poi_point_all'); ?>" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label">내용</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="poi_content_all" value="<?php echo set_value('poi_content_all'); ?>" />
-							</div>
-						</div>
-						<div class="btn-group pull-right" role="group" aria-label="...">
-							<button type="submit" class="btn btn-outline btn-success btn-sm">모든 회원 포인트 동시 추가</button>
-						</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">포인트</label>
+					<div class="col-sm-10 form-inline">
+						<input type="number" class="form-control" name="poi_point_all" value="<?php echo set_value('poi_point_all'); ?>" />
 					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">내용</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="poi_content_all" value="<?php echo set_value('poi_content_all'); ?>" />
+					</div>
+				</div>
+				<div class="btn-group pull-right" role="group" aria-label="...">
+					<button type="submit" class="btn btn-outline btn-success btn-sm">모든 회원 포인트 동시 추가</button>
 				</div>
 			<?php echo form_close(); ?>
 		</div>

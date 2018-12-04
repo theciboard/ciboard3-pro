@@ -62,33 +62,31 @@
 			?>
 				<input type="hidden" name="is_submit" value="1" />
 				<input type="hidden" name="type" value="add" />
-				<div class="form-horizontal">
-					<div class="form-group">
-						<label class="col-sm-2 control-label">카테고리 추가</label>
-						<div class="col-sm-8 form-inline">
-							<select name="cca_parent" class="form-control">
-								<option value="0">최상위카테고리</option>
-								<?php
-								$data = element('data', $view);
-								function cmall_ca_select($p, $data)
-								{
-									$return = '';
-									if ($p && is_array($p)) {
-										foreach ($p as $result) {
-											$return .= '<option value="' . html_escape(element('cca_id', $result)) . '">' . html_escape(element('cca_value', $result)) . '의 하위카테고리</option>';
-											$parent = element('cca_id', $result);
-											$return .= cmall_ca_select(element($parent, $data), $data);
-										}
+				<div class="form-group">
+					<label class="col-sm-2 control-label">카테고리 추가</label>
+					<div class="col-sm-8 form-inline">
+						<select name="cca_parent" class="form-control">
+							<option value="0">최상위카테고리</option>
+							<?php
+							$data = element('data', $view);
+							function cmall_ca_select($p, $data)
+							{
+								$return = '';
+								if ($p && is_array($p)) {
+									foreach ($p as $result) {
+										$return .= '<option value="' . html_escape(element('cca_id', $result)) . '">' . html_escape(element('cca_value', $result)) . '의 하위카테고리</option>';
+										$parent = element('cca_id', $result);
+										$return .= cmall_ca_select(element($parent, $data), $data);
 									}
-									return $return;
 								}
-								echo cmall_ca_select(element(0, $data), $data);
-								?>
-							</select>
-							<input type="text" name="cca_value" class="form-control" value="" placeholder="카테고리명 입력" />
-							<input type="number" name="cca_order" class="form-control" value="0" placeholder="정렬순서" />
-							<button type="submit" class="btn btn-success btn-sm">추가하기</button>
-						</div>
+								return $return;
+							}
+							echo cmall_ca_select(element(0, $data), $data);
+							?>
+						</select>
+						<input type="text" name="cca_value" class="form-control" value="" placeholder="카테고리명 입력" />
+						<input type="number" name="cca_order" class="form-control" value="0" placeholder="정렬순서" />
+						<button type="submit" class="btn btn-success btn-sm">추가하기</button>
 					</div>
 				</div>
 			<?php echo form_close(); ?>
