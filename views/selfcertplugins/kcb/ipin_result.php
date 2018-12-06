@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>IPIN 본인확인</title>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 
