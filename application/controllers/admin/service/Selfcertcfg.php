@@ -208,8 +208,12 @@ class Selfcertcfg extends CB_Controller
 				'skin_selfcert', 'mobile_skin_selfcert', 'site_meta_title_selfcert', 'site_meta_description_selfcert',
 				'site_meta_keywords_selfcert', 'site_meta_author_selfcert', 'site_page_name_selfcert'
 			);
+			$need_to_valid_check = array('selfcert_kcb_mid', 'selfcert_kcp_mid', 'selfcert_lg_mid', 'selfcert_lg_key');
 			foreach ($array as $value) {
 				$savedata[$value] = $this->input->post($value, null, '');
+				if (in_array($value, $need_to_valid_check)) {
+					$savedata[$value] = preg_replace('/[^a-z0-9_\-\.]/i', '', $savedata[$value]);
+				}
 			}
 			$this->Config_model->save($savedata);
 			$view['view']['alert_message'] = '본인확인 설정이 저장되었습니다';

@@ -1390,6 +1390,7 @@ class Board_write extends CB_Controller
 
 		$post['extravars'] = $this->Post_extra_vars_model->get_all_meta($post_id);
 		$post['meta'] = $this->Post_meta_model->get_all_meta($post_id);
+		$post['post_content'] = html_purifier($post['post_content']);
 
 		$view['view']['post'] = $post;
 		$board = $this->board->item_all(element('brd_id', $post));

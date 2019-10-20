@@ -702,9 +702,9 @@ if ( ! function_exists('display_html_content')) {
 			$content = url_auto_link($content, $popup);
 		}
 
-		if ($writer_is_admin === false) {
+		//if ($writer_is_admin === false) {
 			$content = html_purifier($content);
-		}
+		//}
 
 		$content = get_view_thumbnail($content, $thumb_width);
 
