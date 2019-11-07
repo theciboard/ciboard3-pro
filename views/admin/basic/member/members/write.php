@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript" src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 <div class="box">
 	<div class="box-table">
 		<?php

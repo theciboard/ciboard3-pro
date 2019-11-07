@@ -590,9 +590,23 @@ class Board extends CI_Controller
 			$this->CI->db->where('post_datetime >=', $post_start_datetime);
 		}
 
+		/**
+		 * @author TOTALSOFT (admin@totalsoft.co.kr)
+		 *
+		 * findex,forder 배열 추가
+		 */
 		if ($findex && $forder) {
-			$forder = (strtoupper($forder) === 'ASC') ? 'ASC' : 'DESC';
-			$this->CI->db->order_by($findex, $forder);
+			if (is_array($findex) && is_array($forder)) {
+				foreach ($forder as $v) {
+					$forder_array[] = (strtoupper($v) === 'ASC') ? 'ASC' : 'DESC';
+				}
+				foreach ($findex as $key => $v) {
+					$this->CI->db->order_by($v, $forder_array[$key]);
+				}
+			} else {
+				$forder = (strtoupper($forder) === 'ASC') ? 'ASC' : 'DESC';
+				$this->CI->db->order_by($findex, $forder);
+			}
 		}
 		if (is_numeric($limit)) {
 			$this->CI->db->limit($limit);

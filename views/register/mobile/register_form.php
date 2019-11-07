@@ -136,7 +136,7 @@
 
 <?php
 $this->managelayout->add_css(base_url('assets/css/datepicker3.css'));
-$this->managelayout->add_js('http://dmaps.daum.net/map_js_init/postcode.v2.js');
+$this->managelayout->add_js('https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js');
 $this->managelayout->add_js(base_url('assets/js/bootstrap-datepicker.js'));
 $this->managelayout->add_js(base_url('assets/js/bootstrap-datepicker.kr.js'));
 $this->managelayout->add_js(base_url('assets/js/member_register.js'));
