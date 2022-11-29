@@ -781,7 +781,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('board', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board ADD UNIQUE KEY `brd_key` (`brd_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board ADD UNIQUE KEY `brd_key` (`brd_key`)');
+		$this->dbforge->add_unique_constraint('board', 'brd_key', 'brd_key');
 
 
 		// board_admin table
@@ -884,8 +885,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('board_group', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board_group ADD UNIQUE KEY `bgr_key` (`bgr_key`)');
-
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board_group ADD UNIQUE KEY `bgr_key` (`bgr_key`)');
+		$this->dbforge->add_unique_constraint('board_group', 'bgr_key', 'bgr_key');
 
 		// board_group_admin table
 		$this->dbforge->add_field(array(
@@ -936,7 +937,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('board_group_meta', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board_group_meta ADD UNIQUE KEY `bgr_id_bgm_key` (`bgr_id`, `bgm_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board_group_meta ADD UNIQUE KEY `bgr_id_bgm_key` (`bgr_id`, `bgm_key`)');
+		$this->dbforge->add_unique_constraint('board_group_meta', 'bgr_id_bgm_key', '`bgr_id`, `bgm_key`');
 
 
 		// board_meta table
@@ -960,7 +962,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('board_meta', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board_meta ADD UNIQUE KEY `brd_id_bmt_key` (`brd_id`, `bmt_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'board_meta ADD UNIQUE KEY `brd_id_bmt_key` (`brd_id`, `bmt_key`)');
+		$this->dbforge->add_unique_constraint('board_meta', 'brd_id_bmt_key', '`brd_id`, `bmt_key`');
 
 
 		// comment table
@@ -1114,7 +1117,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('comment_meta', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'comment_meta ADD UNIQUE KEY `cmt_id_cme_key` (`cmt_id`, `cme_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'comment_meta ADD UNIQUE KEY `cmt_id_cme_key` (`cmt_id`, `cme_key`)');
+		$this->dbforge->add_unique_constraint('comment_meta', 'cmt_id_cme_key', '`cmt_id`, `cme_key`');
 
 
 		// config table
@@ -1132,7 +1136,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('config', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'config ADD UNIQUE KEY `cfg_key` (`cfg_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'config ADD UNIQUE KEY `cfg_key` (`cfg_key`)');
+		$this->dbforge->add_unique_constraint('config', 'cfg_key', 'cfg_key');
 
 
 		// currentvisitor table
@@ -1276,7 +1281,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('document', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'document ADD UNIQUE KEY `doc_key` (`doc_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'document ADD UNIQUE KEY `doc_key` (`doc_key`)');
+		$this->dbforge->add_unique_constraint('document', 'doc_key', 'doc_key');
 
 
 		// editor_image table
@@ -1473,7 +1479,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('faq_group', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'faq_group ADD UNIQUE KEY `fgr_key` (`fgr_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'faq_group ADD UNIQUE KEY `fgr_key` (`fgr_key`)');
+		$this->dbforge->add_unique_constraint('faq_group', 'fgr_key', 'fgr_key');
 
 
 		// follow table
@@ -1758,7 +1765,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('member', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member ADD UNIQUE KEY `mem_userid` (`mem_userid`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member ADD UNIQUE KEY `mem_userid` (`mem_userid`)');
+		$this->dbforge->add_unique_constraint('member', 'mem_userid', 'mem_userid');
 
 
 		// member_auth_email table
@@ -2036,7 +2044,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('member_dormant', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_dormant ADD UNIQUE KEY `mem_userid` (`mem_userid`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_dormant ADD UNIQUE KEY `mem_userid` (`mem_userid`)');
+		$this->dbforge->add_unique_constraint('member_dormant', 'mem_userid', 'mem_userid');
 
 
 		// member_dormant_notify table
@@ -2123,7 +2132,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('member_extra_vars', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_extra_vars ADD UNIQUE KEY `mem_id_mev_key` (`mem_id`, `mev_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_extra_vars ADD UNIQUE KEY `mem_id_mev_key` (`mem_id`, `mev_key`)');
+		$this->dbforge->add_unique_constraint('member_extra_vars', 'mem_id_mev_key', '`mem_id`, `mev_key`');
 
 
 		// member_group table
@@ -2329,7 +2339,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('member_meta', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_meta ADD UNIQUE KEY `mem_id_mmt_key` (`mem_id`, `mmt_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_meta ADD UNIQUE KEY `mem_id_mmt_key` (`mem_id`, `mmt_key`)');
+		$this->dbforge->add_unique_constraint('member_meta', 'mem_id_mmt_key', '`mem_id`, `mmt_key`');
 
 
 		// member_nickname table
@@ -2411,7 +2422,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('member_register', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_register ADD UNIQUE KEY `mem_id` (`mem_id`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_register ADD UNIQUE KEY `mem_id` (`mem_id`)');
+		$this->dbforge->add_unique_constraint('member_register', 'mem_id', 'mem_id');
 
 
 		// member_userid table
@@ -2437,7 +2449,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('member_userid', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_userid ADD UNIQUE KEY `mem_userid` (`mem_userid`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'member_userid ADD UNIQUE KEY `mem_userid` (`mem_userid`)');
+		$this->dbforge->add_unique_constraint('member_userid', 'mem_userid', 'mem_userid');
 
 
 		// menu table
@@ -3010,7 +3023,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('post_extra_vars', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'post_extra_vars ADD UNIQUE KEY `post_id_pev_key` (`post_id`, `pev_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'post_extra_vars ADD UNIQUE KEY `post_id_pev_key` (`post_id`, `pev_key`)');
+		$this->dbforge->add_unique_constraint('post_extra_vars', 'post_id_pev_key', '`post_id`, `pev_key`');
 
 
 		// post_file table
@@ -3337,7 +3351,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('post_meta', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'post_meta ADD UNIQUE KEY `post_id_pmt_key` (`post_id`, `pmt_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'post_meta ADD UNIQUE KEY `post_id_pmt_key` (`post_id`, `pmt_key`)');
+		$this->dbforge->add_unique_constraint('post_meta', 'post_id_pmt_key', '`post_id`, `pmt_key`');
 
 
 		// post_naver_syndi_log table
@@ -3599,7 +3614,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('social_meta', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'social_meta ADD UNIQUE KEY `mem_id_smt_key` (`mem_id`, `smt_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'social_meta ADD UNIQUE KEY `mem_id_smt_key` (`mem_id`, `smt_key`)');
+		$this->dbforge->add_unique_constraint('social_meta', 'mem_id_smt_key', '`mem_id`, `smt_key`');
 
 
 		// stat_count table
@@ -3814,7 +3830,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('attendance', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'attendance ADD UNIQUE KEY att_date_mem_id (`att_date`, `mem_id`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'attendance ADD UNIQUE KEY att_date_mem_id (`att_date`, `mem_id`)');
+		$this->dbforge->add_unique_constraint('attendance', 'att_date_mem_id', '`att_date`, `mem_id`');
 
 
 		// cmall_cart table
@@ -4225,7 +4242,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('cmall_item', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'cmall_item ADD UNIQUE KEY `cit_key` (`cit_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'cmall_item ADD UNIQUE KEY `cit_key` (`cit_key`)');
+		$this->dbforge->add_unique_constraint('cmall_item', 'cit_key', 'cit_key');
 
 
 		// cmall_item_detail table
@@ -4390,7 +4408,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('cmall_item_meta', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'cmall_item_meta ADD UNIQUE KEY `cit_id_cim_key` (`cit_id`, `cim_key`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'cmall_item_meta ADD UNIQUE KEY `cit_id_cim_key` (`cit_id`, `cim_key`)');
+		$this->dbforge->add_unique_constraint('cmall_item_meta', 'cit_id_cim_key', '`cit_id`, `cim_key`');
 
 
 		// cmall_order table
@@ -4793,7 +4812,8 @@ class Install extends CI_Controller
 		if ($this->dbforge->create_table('cmall_wishlist', true) === false) {
 			return false;
 		}
-		$this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'cmall_wishlist ADD UNIQUE KEY `mem_id_cit_id` (`mem_id`, `cit_id`)');
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . 'cmall_wishlist ADD UNIQUE KEY `mem_id_cit_id` (`mem_id`, `cit_id`)');
+		$this->dbforge->add_unique_constraint('cmall_wishlist', 'mem_id_cit_id', '`mem_id`, `cit_id`');
 
 
 		// deposit table

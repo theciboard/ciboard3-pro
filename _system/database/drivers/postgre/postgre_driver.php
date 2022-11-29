@@ -616,4 +616,36 @@ class CI_DB_postgre_driver extends CI_DB {
 		pg_close($this->conn_id);
 	}
 
+	protected function _replace($table, $keys, $values)
+	{
+		$key = $keys[0];
+		for ($i = 0, $c = count($keys); $i < $c; $i++) {
+			if ($i == 0) {
+				$fields = $keys[$i].' = '.$values[$i];
+			}
+			else {
+				$fields .= ', '.$keys[$i].' = '.$values[$i];
+			}
+
+
+			if (str_contains($keys[1],'id')) {
+				if (str_contains($keys[0],'date')) {
+					$key = $key.','.$keys[1];
+				}
+			}
+			if (str_contains($keys[1],'key')) {
+				if (str_contains($keys[0],'id')) {
+					$key = $key.','.$keys[1];
+				}
+				else {
+					$key = $keys[1];
+				}
+			}
+		}
+
+		$sql = 'INSERT INTO '.$table.' ('.implode(', ', $keys).') VALUES ('.implode(', ', $values).')'.
+			' ON CONFLICT ('.$key.') DO UPDATE SET '.$fields;
+
+		return $sql;
+	}
 }

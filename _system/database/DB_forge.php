@@ -920,7 +920,7 @@ abstract class CI_DB_forge {
 	 */
 	protected function _attr_unique(&$attributes, &$field)
 	{
-		if ( ! empty($attributes['UNIQUE']) && $attributes['UNIQUE'] === TRUE)
+		if (!empty($attributes['UNIQUE']) && $attributes['UNIQUE'] === TRUE)
 		{
 			$field['unique'] = ' UNIQUE';
 		}
@@ -937,7 +937,7 @@ abstract class CI_DB_forge {
 	 */
 	protected function _attr_auto_increment(&$attributes, &$field)
 	{
-		if ( ! empty($attributes['AUTO_INCREMENT']) && $attributes['AUTO_INCREMENT'] === TRUE && stripos($field['type'], 'int') !== FALSE)
+		if (!empty($attributes['AUTO_INCREMENT']) && $attributes['AUTO_INCREMENT'] === TRUE && stripos($field['type'], 'int') !== FALSE)
 		{
 			$field['auto_increment'] = ' AUTO_INCREMENT';
 		}
@@ -957,7 +957,7 @@ abstract class CI_DB_forge {
 
 		for ($i = 0, $c = count($this->primary_keys); $i < $c; $i++)
 		{
-			if ( ! isset($this->fields[$this->primary_keys[$i]]))
+			if (!isset($this->fields[$this->primary_keys[$i]]))
 			{
 				unset($this->primary_keys[$i]);
 			}
@@ -1027,4 +1027,36 @@ abstract class CI_DB_forge {
 		$this->fields = $this->keys = $this->primary_keys = array();
 	}
 
+	public function add_unique_constraint($table, $name, $fields)
+	{
+		if ($table === '')
+		{
+			show_error('A table name is required for that operation.');
+		}
+		else
+		{
+			$table = $this->db->dbprefix.$table;
+		}
+
+		$sql = $this->_add_unique_constraint($table, $name, $fields);
+		if (is_bool($sql))
+		{
+			$this->_reset();
+			if ($sql === FALSE)
+			{
+				return ($this->db->db_debug) ? $this->db->display_error('db_unsupported_feature') : FALSE;
+			}
+		}
+
+		$result = $this->db->query($sql);
+		$this->_reset();
+
+		return $result;
+	}
+
+	protected function _add_unique_constraint(&$table, &$name, &$fields)
+	{
+		// $this->db->query('ALTER TABLE ' . $this->db->dbprefix . $table.' ADD UNIQUE KEY '.$name.' ('.$fields.')');
+		return 'ALTER TABLE '.$table.' ADD UNIQUE KEY '.$name.' ('.$fields.')';
+	}
 }

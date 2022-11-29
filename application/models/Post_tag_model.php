@@ -38,8 +38,8 @@ class Post_tag_model extends CB_Model
 		$this->db->select('count(*) as cnt, pta_tag ', false);
 		$this->db->from('post_tag');
 		$this->db->join('post', 'post.post_id = post_tag.post_id', 'left');
-		$this->db->where('left(post_datetime, 10) >=', $start_date);
-		$this->db->where('left(post_datetime, 10) <=', $end_date);
+		$this->db->where('left(to_char(post_datetime,"YYYY-MM-DD"), 10) >=', $start_date);
+		$this->db->where('left(to_char(post_datetime,"YYYY-MM-DD"), 10) <=', $end_date);
 		$this->db->where('post_del', 0);
 		$brd_id = (int) $brd_id;
 		if ($brd_id) {
@@ -112,7 +112,7 @@ class Post_tag_model extends CB_Model
 		$this->db->select('count(*) as cnt, pta_tag ', false);
 		$this->db->from('post_tag');
 		$this->db->join('post', 'post.post_id = post_tag.post_id', 'left');
-		$this->db->where('left(post_datetime, 10) >=', $start_date);
+		$this->db->where('left(to_char(post_datetime,\'YYYY-MM-DD\'), 10) >=', $start_date);
 		$this->db->where('post_del', 0);
 		$this->db->group_by('pta_tag');
 		$this->db->order_by('cnt', 'desc');

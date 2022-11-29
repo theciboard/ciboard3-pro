@@ -61,7 +61,8 @@ $config['uri_segment_cmall_item'] ='item';  //Cmall item 페이지 주소
  * 서브에 설치하는 경우 올바른 예 ) http://www.test.com/subdir/
  * 서브에 설치하는 경우 잘못된 예 ) http://www.test.com/subdir/index.php
  */
-$config['base_url'] = '';
+#$config['base_url'] = '';
+$config['base_url'] = getenv('CIBOARD_BASEURL');
 if (empty($config['base_url'])) exit("&dollar;config&lsqb;&apos;base_url&apos;&rsqb;  need to be set up in application/config/config.php");  // base_url 의 값을 입력하신 후에는 여기 if 문 자체를 주석처리해도 좋습니다
 
 /*
@@ -302,7 +303,8 @@ $config['allow_get_array'] = TRUE;
  * CiBoard 주 : 로그를 어느 정도 수준에서 남길지 결정합니다.
  * 0 부터 4 사이에 원하시는 값으로 변경하시면 됩니다
  */
-$config['log_threshold'] = 0;
+// $config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -437,7 +439,8 @@ $config['cache_query_string'] = FALSE;
  * CiBoard 주 : 아래의 값을 입력해주세요
  * 입력하신 값은 외부에 공개되지 않도록 주의해주세요
  */
-$config['encryption_key'] = '';
+//$config['encryption_key'] = '';
+$config['encryption_key'] = getenv('CIBOARD_SECRET_KEY');
 
 /*
 |--------------------------------------------------------------------------
