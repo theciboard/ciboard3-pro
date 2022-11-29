@@ -1531,10 +1531,12 @@ if ( ! function_exists('check_cache_dir')) {
 
 		if ( ! is_dir($cache_path) OR ! is_really_writable($cache_path))
 		{
-			if (mkdir($cache_path , 0755)) {
-				return true;
-			} else {
-				return false;
+			if (!file_exists($cache_path)) {
+				if (mkdir($cache_path , 0755)) {
+					return true;
+				} else {
+					return false;
+				}
 			}
 		}
 		return true;

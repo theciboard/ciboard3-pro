@@ -41,11 +41,13 @@ class Notification_model extends CB_Model
 
 		$this->db->where(array('notification.mem_id' => $mem_id));
 		if ($nottype === 'Y') {
-			$this->db->where(array('not_read_datetime >' => '0000-00-00 00:00:00'));
+			//$this->db->where(array('not_read_datetime >' => '0000-00-00 00:00:00'));
+			$this->db->where(array('not_read_datetime >' => '1970-01-01 00:00:00'));
 		}
 		if ($nottype === 'N') {
 			$this->db->group_start();
-			$this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+			//$this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+			$this->db->where(array('not_read_datetime <=' => '1970-01-01 00:00:00'));
 			$this->db->or_where(array('not_read_datetime' => null));
 			$this->db->group_end();
 		}
@@ -62,11 +64,13 @@ class Notification_model extends CB_Model
 		$this->db->join('member', 'notification.target_mem_id = member.mem_id', 'left');
 		$this->db->where(array('notification.mem_id' => $mem_id));
 		if ($nottype === 'Y') {
-			$this->db->where(array('not_read_datetime >' => '0000-00-00 00:00:00'));
+			// $this->db->where(array('not_read_datetime >' => '0000-00-00 00:00:00'));
+			$this->db->where(array('not_read_datetime >' => '1970-01-01 00:00:00'));
 		}
 		if ($nottype === 'N') {
 			$this->db->group_start();
-			$this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+			// $this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+			$this->db->where(array('not_read_datetime <=' => '1970-01-01 00:00:00'));
 			$this->db->or_where(array('not_read_datetime' => null));
 			$this->db->group_end();
 		}
@@ -87,7 +91,8 @@ class Notification_model extends CB_Model
 
 		$this->db->where(array('mem_id' => $mem_id ));
 		$this->db->group_start();
-		$this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+		// $this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+		$this->db->where(array('not_read_datetime <=' => '1970-01-01 00:00:00'));
 		$this->db->or_where(array('not_read_datetime' => null));
 		$this->db->group_end();
 
@@ -106,7 +111,8 @@ class Notification_model extends CB_Model
 		);
 		$this->db->where($where);
 		$this->db->group_start();
-		$this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+		// $this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+		$this->db->where(array('not_read_datetime <=' => '1970-01-01 00:00:00'));
 		$this->db->or_where(array('not_read_datetime' => null));
 		$this->db->group_end();
 		$this->db->set($updatedata);
@@ -125,7 +131,8 @@ class Notification_model extends CB_Model
 		);
 		$this->db->where($where);
 		$this->db->group_start();
-		$this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+		// $this->db->where(array('not_read_datetime <=' => '0000-00-00 00:00:00'));
+		$this->db->where(array('not_read_datetime <=' => '1970-01-01 00:00:00'));
 		$this->db->or_where(array('not_read_datetime' => null));
 		$this->db->group_end();
 		$this->db->set($updatedata);

@@ -179,6 +179,16 @@ class CI_DB_postgre_forge extends CI_DB_forge {
 				$attributes['TYPE'] = 'INTEGER';
 				$attributes['UNSIGNED'] = FALSE;
 				return;
+			case 'DATETIME':
+				$attributes['TYPE'] = 'TIMESTAMP';
+				return;
+			case 'MEDIUMTEXT':
+			case 'LONGTEXT':
+				$attributes['TYPE'] = 'TEXT';
+				return;
+			case 'BLOB':
+				$attributes['TYPE'] = 'BYTEA';
+				return;
 			default: return;
 		}
 	}
@@ -202,4 +212,14 @@ class CI_DB_postgre_forge extends CI_DB_forge {
 		}
 	}
 
+	protected function _add_unique_constraint(&$table, &$name, &$fields)
+	{
+		$fields = explode(', ', $fields);
+		for ($i = 0, $c = count($fields); $i < $c; $i++)
+		{
+			$fields[$i] = $this->db->escape_identifiers(preg_replace('/`/','',$fields[$i]));
+		}
+
+		return 'ALTER TABLE '.$this->db->escape_identifiers($table).' ADD UNIQUE ('.implode(', ', $fields).')';
+	}
 }

@@ -59,7 +59,7 @@
  * 그래야 install 페이지로 정상적으로 이동됩니다.
  * 설치 이후에는 이 값을 변경하셔도 상관없습니다.
 */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
+define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
 
 /*
  *---------------------------------------------------------------
@@ -109,7 +109,7 @@ switch (ENVIRONMENT)
  *	원하시면 다른 값으로 변경하셔도 좋습니다.
  * 변경하시는 경우, 실제 서버에 존재하는 _system 디렉토리명도 같이 변경해주세요
 */
-	$system_path = '_system';
+$system_path = '_system';
 
 /*
  *---------------------------------------------------------------

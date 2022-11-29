@@ -73,6 +73,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+if (getenv('CIBOARD_DB_MYSQL') !== false) {
+	$hostname = getenv('CIBOARD_DB_MYSQL');
+	$dbdriver = 'mysqli';
+	$charset = 'utf8mb4';
+} 
+else if (getenv('CIBOARD_DB_POSTGRES') !== false) {
+	$hostname = getenv('CIBOARD_DB_POSTGRES');
+	$dbdriver = 'postgre';
+	$charset = 'utf8';
+}
+
+// echo 'hostname: '.$hostname.', dbdriver: '.$dbdriver;
 /*
  *	CiBoard 주 : 데이터베이스 정보를 입력하는 곳입니다.
  *	dbprefix 는 cb_ 기본세팅되어있습니다. 원하시는 경우 다른 이름으로 변경하셔도 됩니다.
@@ -82,18 +94,23 @@ $query_builder = TRUE;
  * 위 부분에서 yourdatabasenamehere 이 부분을 실제 디비명으로 변경해주세요
 */
 $db['default'] = array(
-	//'dsn'	=> 'mysql:host=localhost;dbname=yourdatabasenamehere',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'mysqli',
+ 	// 'dsn'	=> 'mysql:host=localhost;dbname=yourdatabasenamehere',
+	// 'dsn'	=> 'pgsql:host='.getenv('CIBOARD_DB_HOST').';dbname='.getenv('CIBOARD_DB_DATABASE'),
+	// 'hostname' => 'localhost',
+	// 'username' => '',
+	// 'database' => '',
+	// 'password' => '',
+	'hostname' => $hostname,
+	'username' => getenv('CIBOARD_DB_USERNAME'),
+	'password' => getenv('CIBOARD_DB_PASSWORD'),
+	'database' => getenv('CIBOARD_DB_DATABASE'),
+	'dbdriver' => $dbdriver,
 	'dbprefix' => 'cb_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
 	'cachedir' => '',
-	'char_set' => 'utf8mb4',
+	'char_set' => $charset,
 	'dbcollat' => 'utf8mb4_general_ci',
 	'swap_pre' => '',
 	'encrypt' => FALSE,
@@ -102,3 +119,5 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+// echo '$db[\'default\']: '.print_r($db['default']);
